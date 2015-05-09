@@ -1,0 +1,45 @@
+1/ récupérer la liste 
+
+ 	Txt -> SD
+
+ 	chiffre. titre (année)
+ 	synopsis ->
+ 	Director
+ 	|| With
+ 	|| Genre (Action, Adventure, Crime, Drama, Mystery, Scifi, Thriller, War, History, Music, Comedy, Biography, Romance, Animation, Family )
+ 	-> int min (durée)
+
+Liste de films
+
+Liste de Genres
+
+Objet Film (done)
+ 	Titre
+ 	Année (si on arrive à un char -> NULL)
+ 	Type (Si après int -> ")" => FILM sinon Série)
+ 	Synopsis (--> Director | Actors | Genre)
+ 	Director (sinon NULL (jusque "With" ou Genre)
+ 	Actors (LIST ?)
+ 	Genre (LIST) 
+
+2/ Initialiser préférences 
+
+Input :
+Déroule la liste, o/n
+Si o : rien
+si n : ajoute film dans une arrayList
+
+Donnez un genre/director/actor
+
+3/ 
+Critères 
+Points
+Nombre occurence d'un acteur / directeur / genre => donne points de l'acteur / directeur / genre
+
+
+4/ Calculer points de toute la liste et le classement
+
+5/ proposer 
+-> o
+-> n -> passe suivant
+> q -> vtff
