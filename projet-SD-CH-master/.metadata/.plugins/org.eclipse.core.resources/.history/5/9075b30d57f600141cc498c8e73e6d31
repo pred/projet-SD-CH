@@ -1,0 +1,15 @@
+package sd;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListeFilm {
+	
+	private List<Film> Liste = new ArrayList<Film>();
+	
+	public ListeFilm(List<Film> Liste){
+		this.Liste=Liste;
+	}
+	
+	
+}

@@ -1,0 +1,28 @@
+package sd;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListeFilm {
+	
+	private List<Film> Liste = new ArrayList<Film>();
+	
+	public ListeFilm(List<Film> Liste){
+		this.Liste=Liste;
+	}
+	
+	public ListeFilm(){
+		Liste =null;
+	}
+	public void add(Film f){
+		this.Liste.add(f);
+	}
+	public String affiche(){
+		String a=null;
+		for (int i=0;i<Liste.size();i++){
+			a=a+"i: "+Liste.get(i).getTitre()+"/n";
+		}
+		return a;
+	}
+	
+}

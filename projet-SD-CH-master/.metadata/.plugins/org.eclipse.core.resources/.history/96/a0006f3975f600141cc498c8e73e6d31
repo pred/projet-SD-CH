@@ -1,0 +1,107 @@
+package sd;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class sd {
+
+	public static void main(String[] args) {
+		ListeFilm Liste_Film=new ListeFilm();
+		
+		Directeur d1=new Directeur("Sam","Mendes");
+		String s1="A cryptic message from Bond's past sends him on a trail to uncover a sinister organization. While M battles political forces to keep the secret service alive, Bond peels back the layers of deceit to reveal the terrible truth behind SPECTRE.";
+		Acteur aa1=new Acteur("Daniel","Craig");
+		Acteur aa2=new Acteur("Ralph","Fiennes");
+		List<Acteur> a1 = new ArrayList<Acteur>();
+		a1.add(aa1);
+		a1.add(aa2);
+		Genre gg1=new Genre("Action");
+		List<Genre> g1 = new ArrayList<Genre>();
+		g1.add(gg1);
+		Film f1=new Film("Spectre",2015,null,s1,d1,a1,g1,null);
+		
+		Directeur d2=new Directeur("Sam","le bricoleur");
+		String s2="A cryptic message from the butt secret service alive";
+		Acteur aa3=new Acteur("Dlel","Cdfa");
+		List<Acteur> a2 = new ArrayList<Acteur>();
+		a2.add(aa1);
+		a2.add(aa3);
+		Genre gg2=new Genre("Acvebzn");
+		List<Genre> g2 = new ArrayList<Genre>();
+		g2.add(gg2);
+		g2.add(gg1);
+		Film f2=new Film("azgrfg",2014,null,s2,d2,a2,g2,null);
+		
+		Directeur d3=new Directeur("neo","logie");
+		String s3="A cryptic message frolitveal the terrible truth behind SPECTRE.";
+		List<Acteur> a3 = new ArrayList<Acteur>();
+		a3.add(aa2);
+		a3.add(aa3);
+		Genre gg3=new Genre("Acnee");
+		List<Genre> g3 = new ArrayList<Genre>();
+		g3.add(gg2);
+		g3.add(gg1);
+		g3.add(gg3);
+		Film f3=new Film("aerobis",2019,null,s3,d3,a3,g3,"326");
+		
+		Liste_Film.add(f1);
+		Liste_Film.add(f2);
+		Liste_Film.add(f3);
+		
+		//affichage des films
+		System.out.println(Liste_Film.affiche());
+		
+		System.out.println("Quels films avez-vous vus :");
+		//interaction utilisateur
+		Scanner sc =new Scanner(System.in);
+		String s="";
+		s=sc.nextLine();
+		sc.close();
+		
+		//traitement du string utilisateur
+		
+		//Scanner scc=new Scanner(s);
+		//scc.useDelimiter("\\s* \\s*");
+		//int i;
+		//List<int> L=new ArrayList<int>();
+		//while(scc.hasNextInt()){
+		//	i=scc.nextInt();
+		//	System.out.println(i);
+		//}
+		//scc.close();
+		
+		String[] tab=s.split(" ");
+		int[] vu=new int[tab.length];
+		for(int i=0;i<tab.length;i++){
+			if(!isIn(vu,Integer.parseInt(tab[i]))){ 
+				vu[i]=Integer.parseInt(tab[i]) ;
+			}
+		}
+		
+		//création Liste_vus
+		ListeFilm Liste_vus=new ListeFilm();
+		for(int i=0;i<vu.length()-1;i++){
+			System.out.println(Liste_vus.get(vu[i]).getTitre());
+			Liste_vus.add(Liste_Film.get(vu[i]));
+		}
+		for(int i=0;i<Liste_vus.size()-1;i++){
+			System.out.println(Liste_vus.get(i).getTitre());
+		}
+		
+		
+		
+		
+		
+		
+	}
+	public static boolean isIn (int[] t,int a){
+		boolean b=false;
+		for(int i=0;i==t.length-1;i++){
+			if(a==t[i]){
+				b=true;
+			}
+		}
+		return b;
+	}
+}

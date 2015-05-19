@@ -1,0 +1,41 @@
+package sd;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListeFilm {
+	
+	private List<Film> Liste ;
+	
+	public ListeFilm(List<Film> Liste){
+		this.Liste=Liste;
+	}	
+	public ListeFilm(){
+		this.Liste =new ArrayList<Film>();
+	}
+	
+	public void add(Film f){
+		this.Liste.add(f);
+	}
+	public Film get(int i){
+		return Liste.get(i);
+	}
+	public int size(){
+		return Liste.size();
+	}
+	
+	public String affiche(){
+		String a="";
+		for (int i=0;i<Liste.size();i++){
+			a=a+i+": "+Liste.get(i).getTitre()+"\n";
+		}
+		return a;
+	}
+	
+	public void calculPoint(){
+		for(int i=0;i<this.Liste.size()-1;i++){
+			this.Liste.get(i).CalculPoint();
+		}
+	}
+	
+}

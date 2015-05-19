@@ -1,0 +1,10 @@
+package sd;
+
+public class Acteur {
+	
+	private 
+
+	public Acteur (String nom,int point){
+		
+	}
+}

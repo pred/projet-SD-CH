@@ -1,0 +1,31 @@
+package sd;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Film {
+	
+	private String titre;
+	private int annee;
+	private String type;
+	private String synopsis;
+	private Directeur directeur;
+	private List<Acteur> acteurs = new ArrayList<Acteur>();
+	private List<Genre> genres = new ArrayList<Genre>();
+	private String duree;
+	
+	public Film(String titre,int annee,String type,String synopsis,Directeur directeur,List<Acteur> acteurs,List<Genre> genres,String duree) {
+		this.titre = titre;
+		this.annee = annee;
+		this.type = type;
+		this.synopsis = synopsis;
+		this.directeur =directeur;
+		this.acteurs=acteurs;
+		this.genres=genres;
+		this.duree=duree;
+	}
+	
+	public String getTitre() {
+		return titre;
+	}
+}

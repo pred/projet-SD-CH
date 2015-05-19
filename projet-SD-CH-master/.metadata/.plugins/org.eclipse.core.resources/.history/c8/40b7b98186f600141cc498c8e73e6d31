@@ -1,0 +1,45 @@
+package sd;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Film {
+	
+	private String titre;
+	private int annee;
+	private String type;
+	private String synopsis;
+	private Directeur directeur;
+	private List<Acteur> acteurs = new ArrayList<Acteur>();
+	private List<Genre> genres = new ArrayList<Genre>();
+	private String duree;
+	private int point;
+	
+	public Film(String titre,int annee,String type,String synopsis,Directeur directeur,List<Acteur> acteurs,List<Genre> genres,String duree) {
+		this.titre = titre;
+		this.annee = annee;
+		this.type = type;
+		this.synopsis = synopsis;
+		this.directeur =directeur;
+		this.acteurs=acteurs;
+		this.genres=genres;
+		this.duree=duree;
+		this.point=0;
+	}
+	
+	public String getTitre() {
+		return this.titre;
+	}
+	
+	public Directeur getDirecteur() {
+		return this.directeur;
+	}
+	
+	public void calculPoint(ListeFilm Liste){
+		System.out.println("eo");
+		this.point=this.point+this.directeur.calculPoint(Liste);
+		for(int i=0;i<acteurs.size()-1;i++){
+			this.point=this.point+this.acteurs.get(i).calculPoint(Liste)+this.genres.get(i).calculPoint(Liste);
+		}
+	}
+}

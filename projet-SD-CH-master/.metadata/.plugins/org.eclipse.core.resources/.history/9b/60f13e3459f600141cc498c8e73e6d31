@@ -1,0 +1,31 @@
+package sd;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Film {
+	
+	private String titre;
+	private int année;
+	private String type;
+	private String synopsis;
+	private Directeur directeur;
+	private List<Acteur> acteurs = new ArrayList<Acteur>();
+	private List<Genre> genre = new ArrayList<Genre>();
+	private String duree;
+	
+	public Film() {
+		titre = "inconnu";
+		année = 0;
+		type = "inconnu";
+		synopsis = "inconnu";
+		directeur =null;
+		acteurs=null;
+		genre=null;
+		duree="inconnue";
+	}
+	
+	public String getTitre() {
+		return titre;
+	}
+}

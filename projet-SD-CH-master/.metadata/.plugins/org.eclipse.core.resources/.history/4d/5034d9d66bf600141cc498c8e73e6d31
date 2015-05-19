@@ -1,0 +1,89 @@
+package sd;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class sd {
+
+	public static void main(String[] args) {
+		ListeFilm Liste_Film=new ListeFilm();
+		
+		Directeur d1=new Directeur("Sam","Mendes");
+		String s1="A cryptic message from Bond's past sends him on a trail to uncover a sinister organization. While M battles political forces to keep the secret service alive, Bond peels back the layers of deceit to reveal the terrible truth behind SPECTRE.";
+		Acteur aa1=new Acteur("Daniel","Craig");
+		Acteur aa2=new Acteur("Ralph","Fiennes");
+		List<Acteur> a1 = new ArrayList<Acteur>();
+		a1.add(aa1);
+		a1.add(aa2);
+		Genre gg1=new Genre("Action");
+		List<Genre> g1 = new ArrayList<Genre>();
+		g1.add(gg1);
+		Film f1=new Film("Spectre",2015,null,s1,d1,a1,g1,null);
+		
+		Directeur d2=new Directeur("Sam","Mendes");
+		String s2="A cryptic message from Bond's past sends him on a trail to uncover a sinister organization. While M battles political forces to keep the secret service alive, Bond peels back the layers of deceit to reveal the terrible truth behind SPECTRE.";
+		Acteur aa3=new Acteur("Daniel","Craig");
+		List<Acteur> a2 = new ArrayList<Acteur>();
+		a2.add(aa1);
+		a2.add(aa3);
+		Genre gg2=new Genre("Action");
+		List<Genre> g2 = new ArrayList<Genre>();
+		g2.add(gg2);
+		g2.add(gg1);
+		Film f2=new Film("aerobis",2014,null,s2,d2,a2,g2,null);
+		
+		Liste_Film.add(f1);
+		Liste_Film.add(f2);
+		
+		//affichage des films
+		System.out.println(Liste_Film.affiche());
+		
+		System.out.println("Quels films avez-vous vus :");
+		//interaction utilisateur
+		Scanner sc =new Scanner(System.in);
+		String s="";
+		s=sc.nextLine();
+		sc.close();
+		
+		//traitement du string utilisateur
+		
+		//Scanner scc=new Scanner(s);
+		//scc.useDelimiter("\\s* \\s*");
+		//int i;
+		//List<int> L=new ArrayList<int>();
+		//while(scc.hasNextInt()){
+		//	i=scc.nextInt();
+		//	System.out.println(i);
+		//}
+		//scc.close();
+		
+		String[] tab=s.split(" ");
+		int[] vu=new int[tab.length];
+		for(int i=0;i==tab.length-1;i++){
+			if(!isIn(vu,Integer.parseInt(tab[i]))){ 
+				vu[i]=Integer.parseInt(tab[i]) ;
+			}
+		}
+		for(int i=0;i<tab.length;i++){
+			System.out.println(i);
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	public static boolean isIn (int[] t,int a){
+		boolean b=false;
+		for(int i=0;i==t.length-1;i++){
+			if(a==t[i]){
+				b=true;
+			}
+		}
+		return b;
+	}
+}
